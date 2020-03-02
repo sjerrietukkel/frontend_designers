@@ -7,7 +7,32 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,500,700,800,900&display=swap" rel="stylesheet"> 
 </head>
+<header>
+    <h2 class="logo-header">Wat Eten We Vanavond?</h2>
+</header>
 <body>
+    <main>
+        <div class="hero">
+            <div class="width">
+                <h1 class="logo">Wat Eten We Vanavond?</h1>
+                <p>
+                    Geen inspiratie om wat te koken vanavond? Ook klaar met het gezeik van je kinderen? 
+                    Voer hier in waar je enigszins trek in hebt of waar je vanaf moet en versimpel je keuze.
+                </p>
+                <form>
+                    <h2>Voer je wensen in</h2>
+                    <label for="fname">Ik heb zin in:</label>
+                    <input type="text" id="fname" name="fname">
+                    <label>Vegetarisch:</label>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <input type="submit" value="Verzend">
+                </form>   
+            </div>
+        </div>
+    </main>
     <div id="app">
     </div>
     <script src="index.js"></script>
