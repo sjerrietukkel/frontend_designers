@@ -1,0 +1,43 @@
+* {
+    font-family: 'Muli', serif;
+}
+
+h1 {
+    color: #009900;
+    max-width: 400px;
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+body{
+    max-width: 1080px;
+    margin: auto;
+    background-color: aliceblue;
+}
+
+#app {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+#text {
+    display: none;
+}
+
+.card {
+    padding: 20px;
+    background-color: #0099000e;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 15px;
+    width: 400px;
+}
+
+.card-image {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+}
