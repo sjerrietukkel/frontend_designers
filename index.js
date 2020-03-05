@@ -11,12 +11,16 @@
 //     // console.log(html)
 //     document.querySelector('#app').insertAdjacentHTML('beforeend', html)
 // })
+const isEmpty = document.getElementById("app").childNodes.length
+if (isEmpty == 1) {
+    document.querySelector('#app').insertAdjacentHTML('beforeend', `<div class="full-width"><h1>Vul eerst je voorkeuren in</h1></div><div class="card-loading"></div><div class="card-loading"></div><div class="card-loading"></div>`)
+}
+
 
 
 function Submit() {
     event.preventDefault()
     const fname = document.getElementById("fname").value
-
     const points = document.getElementById("points").value
     const persons = document.getElementById("aantalMensen").value
   
