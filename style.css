@@ -80,6 +80,8 @@ h1 {
     max-width: 400px;
     font-size: 18px;
     font-weight: bold;
+    margin-bottom: 4px;
+    overflow: hidden;
 }
 
 h2 {
@@ -88,7 +90,7 @@ h2 {
 
 form {
     color: rgb(25,25,25);
-    width: 75%;
+    width: 80%;
     background-color: white;
     padding: 26px 50px;
     border-radius: 5px;
@@ -120,11 +122,18 @@ form {
     width: 300px;
     margin: 16px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .card-title {
     padding: 10px;
     color: rgb(25,25,25);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0;
 }
 
 .card-image {
@@ -202,4 +211,37 @@ form {
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  .fas {
+    color: #009900;
+  }
+
+  .card:hover {
+    border: 2px solid #009900;
+    transition: .2s ease-out;
+  }
+
+  .link {
+    padding: 12px;
+    background-color: #009900;
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 18px 0 4px 0;
+    width: 115px;
+    text-align: center;
+  }
+
+  .flex-info {
+      width: 100%;
+      display: flex;
+  }
+
+  .icon-text {
+      font-size: 16px;
+      margin: 0 16px 0 0 ;
   }
