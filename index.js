@@ -21,8 +21,8 @@ if (isEmpty == 1) {
 function Submit() {
     event.preventDefault()
     const fname = document.getElementById("fname").value
-    const points = document.getElementById("points").value
-    const persons = document.getElementById("aantalMensen").value
+    // const points = document.getElementById("points").value
+    // const persons = document.getElementById("aantalMensen").value
   
     fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=${fname},dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
     .then((response) => {
@@ -33,7 +33,8 @@ function Submit() {
         const html = data.recipes.map (data => {
             return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
         });
-        // console.log(html)
+        const app = document.getElementById('app')
+        app.innerHTML = ""
         document.querySelector('#app').insertAdjacentHTML('beforeend', html)
     })
 }

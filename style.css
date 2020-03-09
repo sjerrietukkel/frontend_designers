@@ -104,9 +104,9 @@ form {
     justify-content: center;
     flex-wrap: wrap;
     max-width: 1080px;
-    margin: auto;
     background-color: white;
     color: white;
+    margin: 50px auto;
 }
 
 #text {
@@ -275,4 +275,24 @@ form {
     text-align: center;
     font-size: 32px;
     margin: auto
+  }
+
+  footer {
+    background-color: #009900;
+    padding: 20px;
+  }
+
+  footer p {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .form-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type=submit] {
+    width: 120px;
   }
