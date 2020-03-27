@@ -298,6 +298,7 @@ form {
   .form-flex {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   input[type=submit] {
