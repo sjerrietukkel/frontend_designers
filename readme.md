@@ -76,7 +76,7 @@ De tweede state die in de applicatie zit is de loading state, deze zorgt ervoor 
 ![Loader](/img/loader.png "loader")
 
 Wanneer de API eruit ligt, de maximale hoeveelheid calls is gedaan of er iets verkeerd gaat in de browser wordt de error message getoond d.m.v. `.catch`
-
+ 
 ![Error](/img/error.png "error")
 
 
