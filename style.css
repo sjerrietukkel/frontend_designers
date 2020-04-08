@@ -362,6 +362,7 @@ form {
     display: block;
     width: 75%;
     transition: .2s ease;
+    margin: 16px;
   }
 
   .preview {
@@ -381,4 +382,8 @@ form {
     color: white;
     padding: 12px;
     cursor: pointer;
+  }
+
+  .card-title > div:last-of-type {
+    margin: 16px 0 ;
   }
