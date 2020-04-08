@@ -10,7 +10,7 @@ var loaderPlaceholder = document.getElementById('loader-placeholder')
 const loader = () => {
   sanitize()
   const markup =
-    `<p>Recepten worden opgehaald!</p><div class="lds-ring" id="loader"><div></div><div></div><div></div><div></div></div>`
+    `<p class="center">Recepten worden opgehaald!</p><div class="lds-ring" id="loader"><div></div><div></div><div></div><div></div></div>`
     loaderPlaceholder.insertAdjacentHTML("afterbegin", markup)
 }
 
@@ -33,7 +33,7 @@ function Submit() {
     event.preventDefault()
     if (vegetarian.checked == true & student.checked == false & gezond.checked == false){
         loader()
-        fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner`)
+        fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
         })

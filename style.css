@@ -77,6 +77,7 @@ input[type=submit] {
     font-weight: bold;
     border-radius: 8px;
     font-size: 16px;
+    margin-top: 8px;
 }
 input[type=text] {
     font-size: 16px;
@@ -175,6 +176,7 @@ form {
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin-top: 8px;
   }
   
   /* Hide default HTML checkbox */
@@ -343,4 +345,11 @@ form {
 
   .error {
     color: red;
+    text-align: center;
+    width: 100%;
+  }
+
+  .center {
+    text-align: center;
+    width: 100%;
   }

@@ -3,11 +3,14 @@ Daniel van der Schuur,
 500733183
 
 ![Logo](/img/logo.png "Logo")
+![Screenshot](/img/screenshot.png "Screenshot")
 
 ## Concept
+
 Wat eten we vanavond? is een applicatie voor iedere werkende, ouder of student die helemaal klaar is met de meest gestelde vraag van Nederland. In de app vult hij/zij 3 simpele requirements in en de applicatie geeft bijbehorende recepten terug. Dut zuhb er 3 om de cognitieve load van het moeten kiezen te beperken. Binnen de app kunnen gebruikers snel scannen of het wat voort ze is door de prijs, aantal mensen en kookduur te bekijken. Ook kunnen ze een korte samenvatting van de kookinstrcuties bekijken. Voor het hele recept moeten ze echter naar de bijbehorende site navigeren. 
 
-![Screenshot](/img/screenshot.png "Screenshot")
+![Conceptual](/img/conceptual.png "conceptual")
+
 
 ## API 
 ### Spoonacular Random Recipe API
@@ -70,11 +73,11 @@ Binnen het Design wordt de blank state weergegeven in de vorm van een skeleton f
 
 De tweede state die in de applicatie zit is de loading state, deze zorgt ervoor dat de gebruiker de juiste feedback krijgt bij het aanvragen van data. De loading state laat zich zien als een loader van onder een seconde die wordt getriggerd wanneer de gebruiker het form verzend. 
 
-### !! Image Loader !!
+![Loader](/img/loader.png "loader")
 
-### !! Error State !!
+Wanneer de API eruit ligt, de maximale hoeveelheid calls is gedaan of er iets verkeerd gaat in de browser wordt de error message getoond d.m.v. `.catch`
 
-### !! Ideal State !!
+![Error](/img/error.png "error")
 
 
 ## Code
