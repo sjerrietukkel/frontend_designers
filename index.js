@@ -5,17 +5,23 @@ const vegetarian = document.getElementById('vegetarian')
 const student = document.getElementById('student')
 const gezond = document.getElementById('healthy')
 
-var root = document.getElementById('loader-placeholder')
+var loaderPlaceholder = document.getElementById('loader-placeholder')
 
 const loader = () => {
   sanitize()
   const markup =
-    `<div class="lds-ring" id="loader"><div></div><div></div><div></div><div></div></div>`
-  root.insertAdjacentHTML("afterbegin", markup)
+    `<p>Recepten worden opgehaald!</p><div class="lds-ring" id="loader"><div></div><div></div><div></div><div></div></div>`
+    loaderPlaceholder.insertAdjacentHTML("afterbegin", markup)
 }
 
 const sanitize = () => {
- root.innerHTML = ''
+    loaderPlaceholder.innerHTML = ''
+}
+
+const error = () => {
+    sanitize()
+    const errorMessage = `<p class="error">Er ging iets fout, probeer het later nog een keer</p>`
+    loaderPlaceholder.insertAdjacentHTML("afterbegin", errorMessage)
 }
 
 if (isEmpty == 1) {
@@ -26,9 +32,8 @@ if (isEmpty == 1) {
 function Submit() {
     event.preventDefault()
     if (vegetarian.checked == true & student.checked == false & gezond.checked == false){
-        // document.querySelector("#submit").insertAdjacentElement('beforeend', loader)
         loader()
-        fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
+        fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner`)
         .then((response) => {
         return response.json()
         })
@@ -42,6 +47,10 @@ function Submit() {
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian")
             sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else if(vegetarian.checked == true & student.checked == true & gezond.checked == false) {
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
@@ -57,8 +66,14 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian student")
+            sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else if(vegetarian.checked == true & student.checked == true & gezond.checked == true) {
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -72,8 +87,14 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian student gezond")
+            sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else if(vegetarian.checked == true & student.checked == false & gezond.checked == true) {
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -87,8 +108,14 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" vegetarisch gezond")
+            sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else if(vegetarian.checked == false & student.checked == true & gezond.checked == true) {
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -102,8 +129,14 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" student gezond")
+            sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else if(vegetarian.checked == false & student.checked == true & gezond.checked == false) {
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -117,8 +150,14 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" student")
+            sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else if(vegetarian.checked == false & student.checked == false & gezond.checked == true) {
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -132,8 +171,14 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" gezond")
+            sanitize()
+    }).catch(err => {
+        console.error(err) 
+        error()
+        return Promise.resolve(3)
     })
     }else{
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -147,6 +192,7 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("no input")
+            sanitize()
         }
     )}
 }
