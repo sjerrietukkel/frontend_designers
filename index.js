@@ -5,13 +5,29 @@ const vegetarian = document.getElementById('vegetarian')
 const student = document.getElementById('student')
 const gezond = document.getElementById('healthy')
 
+var root = document.getElementById('loader-placeholder')
+
+const loader = () => {
+  sanitize()
+  const markup =
+    `<div class="lds-ring" id="loader"><div></div><div></div><div></div><div></div></div>`
+  root.insertAdjacentHTML("afterbegin", markup)
+}
+
+const sanitize = () => {
+ root.innerHTML = ''
+}
+
 if (isEmpty == 1) {
     document.querySelector('#app').insertAdjacentHTML('beforeend', `<div class="full-width"><h1>Vul eerst je voorkeuren in</h1></div><div class="card-loading"></div><div class="card-loading"></div><div class="card-loading"></div>`)
 }
 
+
 function Submit() {
     event.preventDefault()
     if (vegetarian.checked == true & student.checked == false & gezond.checked == false){
+        // document.querySelector("#submit").insertAdjacentElement('beforeend', loader)
+        loader()
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
         .then((response) => {
         return response.json()
@@ -25,6 +41,7 @@ function Submit() {
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian")
+            sanitize()
     })
     }else if(vegetarian.checked == true & student.checked == true & gezond.checked == false) {
         fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=vegetarian,dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)

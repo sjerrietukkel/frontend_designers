@@ -72,6 +72,10 @@ De tweede state die in de applicatie zit is de loading state, deze zorgt ervoor 
 
 ### !! Image Loader !!
 
+### !! Error State !!
+
+### !! Ideal State !!
+
 
 ## Code
 De code werkt als volgt: De gefetchde data wordt als json binnen de code opgeslagen, en hier mapt een `.then` overheen zodat de data asynchroon kan worden opgeroepen. De data voegt de requirements van de gebruiker in en de json wordt uitgelezen d.m.v. template literals die de volgende HTML code invoegen in de `#app` HTML div. 
