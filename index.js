@@ -1,6 +1,4 @@
 const isEmpty = document.getElementById("app").childNodes.length
-// const fname = document.getElementById("fname").value
-// const input = fname.toLowerCase()
 const vegetarian = document.getElementById('vegetarian')
 const student = document.getElementById('student')
 const gezond = document.getElementById('healthy')
@@ -25,7 +23,7 @@ const error = () => {
 }
 
 if (isEmpty == 1) {
-    document.querySelector('#app').insertAdjacentHTML('beforeend', `<div class="full-width"><h1>Vul eerst je voorkeuren in</h1></div><div class="card-loading"></div><div class="card-loading"></div><div class="card-loading"></div>`)
+    document.querySelector('#app').insertAdjacentHTML('beforeend', `<div class="full-width"><h1>Vul eerst je voorkeuren in</h1></div><div class="card-loading"></div><div class="card-loading"></div>`)
 }
 
 
@@ -40,13 +38,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -60,13 +69,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian student")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -81,13 +101,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("vegetarian student gezond")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -102,13 +133,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" vegetarisch gezond")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -123,13 +165,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" student gezond")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -144,13 +197,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" student")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -165,13 +229,24 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log(" gezond")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
     }).catch(err => {
         console.error(err) 
         error()
@@ -186,38 +261,27 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
             console.log("no input")
             sanitize()
+            const preview = document.querySelectorAll('.preview')
+            console.log(preview)
+            preview.forEach(function (preview){
+                preview.addEventListener('click', function () {
+                    var instructions = document.querySelector('.instructions')
+                    if (instructions.classList) {
+                        instructions.classList.toggle("instructions-shown")
+                    } else {
+                    }
+                })
+            })
         }
     )}
 }
-
-// function Submit() {
-//     event.preventDefault()
-//     const fname = document.getElementById("fname").value
-//     const vegetarian = 
-//     // const points = document.getElementById("points").value
-//     // const persons = document.getElementById("aantalMensen").value
-    
-//     fetch(`https://api.spoonacular.com/recipes/random?number=3&tags=${fname},dinner&apiKey=dabe659634cb4253ae5f4f1a393456f3`)
-//     .then((response) => {
-//     return response.json()
-//     })
-//     .then((data) => {
-//         console.log(data)
-//         const html = data.recipes.map (data => {
-//             return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div>`
-//         });
-//         const app = document.getElementById('app')
-//         app.innerHTML = ""
-//         document.querySelector('#app').insertAdjacentHTML('beforeend', html)
-//     })
-// }
 
 
 // 'https://api.spoonacular.com/recipes/random&apiKey=a840e03e4ca140dfb16812ea490c8007'

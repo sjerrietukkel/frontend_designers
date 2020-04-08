@@ -78,6 +78,7 @@ input[type=submit] {
     border-radius: 8px;
     font-size: 16px;
     margin-top: 8px;
+    cursor: pointer;
 }
 input[type=text] {
     font-size: 16px;
@@ -124,9 +125,9 @@ form {
     padding: 0px;
     background-color: #0099000e;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
     margin: 16px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
     box-sizing: border-box;
@@ -135,8 +136,8 @@ form {
 }
 
 .card-loading {
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   border: 2px solid rgba(128, 128, 128, 0.3);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
   box-sizing: border-box;
@@ -152,16 +153,16 @@ form {
     color: rgb(25,25,25);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 0;
+    justify-content: space-evenly;
+    margin-left: 16px;
 }
 
 .card-image {
-    width: 100%;
+    width: 300px;
     height: 250px;
     margin: auto;
     border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .card-head {
@@ -239,8 +240,7 @@ form {
   }
 
   .card:hover {
-    border: 2px solid #009900;
-    transition: .2s ease-out;
+    outline: 2px solid #009900;
   }
 
   .link {
@@ -352,4 +352,38 @@ form {
   .center {
     text-align: center;
     width: 100%;
+  }
+
+  .instructions {
+    display: none;
+  }
+
+  .instructions-shown {
+    display: block;
+    width: 75%;
+    transition: .2s ease;
+    margin: 16px;
+  }
+
+  .preview {
+    color: #009900;
+    font-weight: normal;
+    border: 4px solid #009900;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .preview:hover{
+    background-color: #009900;
+    border: none;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+  }
+
+  .card-title > div:last-of-type {
+    margin: 16px 0 ;
   }
