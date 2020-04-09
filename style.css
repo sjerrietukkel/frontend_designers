@@ -129,11 +129,13 @@ form {
     border-radius: 5px;
     width: 100%;
     margin: 16px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px; */
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     transition: .2s ease-in;
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.12),0 1px 5px rgba(0,0,0,.1),0 2px 4px rgba(0,0,0,.16);
+    box-shadow: 0 5px 5px rgba(0,0,0,.12),0 1px 5px rgba(0,0,0,.1),0 2px 4px rgba(0,0,0,.16);
 }
 
 .card-loading {
@@ -388,4 +390,12 @@ form {
 
   .card-title > div:last-of-type {
     margin: 16px 0 ;
+  }
+
+  .results {
+    max-width: 1000px;
+    text-align: center;
+    color: #009900;
+    font-size: 32px;
+    margin: 0 0 32px 0;
   }

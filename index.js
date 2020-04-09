@@ -41,8 +41,10 @@ function Submit() {
                 return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
+            const titleText = `<h1 class="results">Resultaten voor: vegetarisch</h1>`
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log("vegetarian")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -73,7 +75,9 @@ function Submit() {
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
+            const titleText = `<h1 class="results">Resultaten voor: vegetarisch & student</h1>`
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log("vegetarian student")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -104,8 +108,10 @@ function Submit() {
                 return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
+            const titleText = `<h1 class="results">Resultaten voor: vegetarisch, student & gezond</h1>`
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log("vegetarian student gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -136,8 +142,10 @@ function Submit() {
                 return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
+            const titleText = `<h1 class="results">Resultaten voor: vegetarisch & gezond</h1>`
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log(" vegetarisch gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -168,8 +176,10 @@ function Submit() {
                 return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
+            const titleText = `<h1 class="results">Resultaten voor: student & gezond</h1>`
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log(" student gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -200,8 +210,10 @@ function Submit() {
                 return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
+            const titleText = `<h1 class="results">Resultaten voor: student</h1>`
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log(" student")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -232,8 +244,10 @@ function Submit() {
                 return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
+            const titleText = `<h1 class="results">Resultaten voor: gezond</h1>`
             app.innerHTML = ""
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log(" gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
@@ -265,7 +279,9 @@ function Submit() {
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
+            const titleText = `<h1 class="results">Resultaten voor: alles</h1>`
             document.querySelector('#app').insertAdjacentHTML('beforeend', html)
+            document.querySelector('#app').insertAdjacentHTML('afterbegin', titleText)
             console.log("no input")
             sanitize()
             const preview = document.querySelectorAll('.preview')
