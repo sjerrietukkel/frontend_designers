@@ -2,7 +2,6 @@
 Daniel van der Schuur,
 500733183
 
-![Logo](/img/logo.png "Logo")
 ![Screenshot](/img/screenshot.png "Screenshot")
 
 ## Concept
@@ -102,6 +101,10 @@ De code werkt als volgt: De gefetchde data wordt als json binnen de code opgesla
 Deze code wordt voor elk JSON object uitgevoerd en genereerd een kaart.
 
 ## Iteraties
+Na een enkel aantal tests kwam ik al snel achter de conclusie dat de kaarten beter als full-width kaarten konden getoond, dit kwam doordat de instructies anders veel te krap gepresenteerd werden in de kaart en deze ontzettend veel hoogte binnen het product zou innemen. 
 
+![Closed](/img/horizontal1.png "horizontal1")
+
+![Open](/img/horizontal2.png "horizontal2")
 
 ## Future
