@@ -133,6 +133,7 @@ form {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    transition: .2s ease-in;
 }
 
 .card-loading {
@@ -356,6 +357,7 @@ form {
 
   .instructions {
     display: none;
+    transition: .2s ease;
   }
 
   .instructions-shown {
