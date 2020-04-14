@@ -38,7 +38,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             const titleText = `<h1 class="results">Resultaten voor: vegetarisch</h1>`
@@ -48,18 +48,21 @@ function Submit() {
             console.log("vegetarian")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -71,7 +74,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
@@ -81,18 +84,21 @@ function Submit() {
             console.log("vegetarian student")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -105,7 +111,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             const titleText = `<h1 class="results">Resultaten voor: vegetarisch, student & gezond</h1>`
@@ -115,18 +121,21 @@ function Submit() {
             console.log("vegetarian student gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -139,7 +148,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             const titleText = `<h1 class="results">Resultaten voor: vegetarisch & gezond</h1>`
@@ -149,18 +158,21 @@ function Submit() {
             console.log(" vegetarisch gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -173,7 +185,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             const titleText = `<h1 class="results">Resultaten voor: student & gezond</h1>`
@@ -183,18 +195,21 @@ function Submit() {
             console.log(" student gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -207,7 +222,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             const titleText = `<h1 class="results">Resultaten voor: student</h1>`
@@ -217,18 +232,21 @@ function Submit() {
             console.log(" student")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -241,7 +259,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             const titleText = `<h1 class="results">Resultaten voor: gezond</h1>`
@@ -251,18 +269,21 @@ function Submit() {
             console.log(" gezond")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
     }).catch(err => {
-        console.error(err) 
+        console.error(err)
         error()
         return Promise.resolve(3)
     })
@@ -275,7 +296,7 @@ function Submit() {
         .then((data) => {
             console.log(data)
             const html = data.recipes.map (data => {
-                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div class="instructions">${data.instructions}</div><div><a class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
+                return `<div class="card"><div class="card-head"><img src="${data.image}" alt="recipe image" class="card-image"></div><div class="card-title"><h1>${data.title}</h1><div class="flex-info"><p class="icon-text"><i class="fas fa-clock"></i> ${data.readyInMinutes}m</p><p class="icon-text"><i class="fas fa-users"></i> ${data.servings}</p></div><div id="${data.id}" class="instructions">${data.instructions}</div><div><a id="${data.id}" class="preview">instructies</a><a href="${data.sourceUrl}" class="link">Bekijk Recept</a></div></div></div>`
             });
             const app = document.getElementById('app')
             app.innerHTML = ""
@@ -285,13 +306,16 @@ function Submit() {
             console.log("no input")
             sanitize()
             const preview = document.querySelectorAll('.preview')
-            console.log(preview)
             preview.forEach(function (preview){
-                preview.addEventListener('click', function () {
-                    var instructions = document.querySelector('.instructions')
-                    if (instructions.classList) {
-                        instructions.classList.toggle("instructions-shown")
-                    } else {
+                preview.addEventListener('click', function (event) {
+                    let id = event.target.id
+                    const instructions = document.getElementsByClassName('instructions')
+                    console.log("testtest", instructions)
+                    console.log("typeof ", typeof instructions)
+                    for (let index = 0; index < instructions.length; index++) {
+                        if(instructions[index].id == id ){
+                            instructions[index].classList.toggle("instructions-shown")
+                        }
                     }
                 })
             })
